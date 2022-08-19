@@ -1,0 +1,7 @@
+package com.blog.controllers;
+
+@RestController
+@RequestMapping("/api")
+public class BlogPostController {
+	
+}

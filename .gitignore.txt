@@ -1,1 +1,4 @@
 /client/node_modules
+/blog-backend/bin
+/blog-backend/tmp
+

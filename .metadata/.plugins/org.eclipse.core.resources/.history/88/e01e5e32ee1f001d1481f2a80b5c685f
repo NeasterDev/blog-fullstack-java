@@ -1,0 +1,48 @@
+package com.blog.controllers;
+
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.blog.models.BlogPost;
+import com.blog.models.User;
+import com.blog.repos.BlogPostRepo;
+import com.blog.repos.UserRepo;
+
+@RestController
+@RequestMapping("/api")
+public class BlogPostController {
+	
+	@Autowired
+	public BlogPostRepo blogPostRepo;
+//	user repository
+	@Autowired
+	public UserRepo userRepo;
+	
+//	Get all blog posts
+	@GetMapping("/post")
+	public List<BlogPost> getPosts() {
+		
+		List<BlogPost> posts = blogPostRepo.findAll();
+		return posts;
+	}
+//	Create a blog post and add it to blog post array in user
+//	{
+//	    "title": "first blog post",
+//	    "content": "This blog post is the best post
+//	}
+//	@PostMapping("/post/{userId}")
+//	public BlogPost createPost(@RequestBody BlogPost blogPost, @PathVariable(value="userId") Long userId) {
+//		User user = userRepo.findById(userId).orElse(null);
+//		blogPost.setUser(user);
+//		BlogPost post = blogPostRepo.save(blogPost);
+//		return post;
+//	}
+}
