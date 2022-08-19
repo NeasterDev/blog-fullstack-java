@@ -1,0 +1,33 @@
+package com.blog.controllers;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.blog.models.User;
+import com.blog.repos.UserRepo;
+
+@RestController
+@RequestMapping("/api")
+public class UserController {
+
+//	user repository
+	private UserRepo userRepo;
+	
+//	Get all users
+	@GetMapping("/users")
+	public List<User> getUsers() {
+		return userRepo.findAll();
+	}
+//	Get a single user
+	@GetMapping("/users/{id}")
+	public User getUsers(@RequestParam(value="id") Long id) {
+		return userRepo.findById(id).orElse(null);
+	}
+//	Add a new user
+	
+//	Delete a user
+}

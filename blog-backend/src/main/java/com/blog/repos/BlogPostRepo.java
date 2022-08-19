@@ -1,5 +1,9 @@
 package com.blog.repos;
 
-public class BlogPostRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.blog.models.BlogPost;
+
+public interface BlogPostRepo extends JpaRepository<BlogPost, Long>{
 
 }

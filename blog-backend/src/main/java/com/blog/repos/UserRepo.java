@@ -1,5 +1,9 @@
 package com.blog.repos;
 
-public class UserRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.blog.models.User;
+
+public interface UserRepo extends JpaRepository<User, Long>{
 
 }

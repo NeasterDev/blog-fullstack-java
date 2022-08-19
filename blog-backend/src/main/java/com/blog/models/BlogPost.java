@@ -7,12 +7,13 @@ import javax.persistence.*;
 public class BlogPost {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
+	
 	private String title;
 	private String content;
 	
 //	Getters and setters
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 	public void setId(long id) {

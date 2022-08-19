@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id; // primary id
+	private Long id; // primary id
 	
 	private String username;
 	private String password;
@@ -23,7 +23,7 @@ public class User {
 	private List<BlogPost> posts; // This will hold the posts that the user makes
 	
 //	Getters and setters
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 	public void setId(long id) {
